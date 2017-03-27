@@ -97,6 +97,7 @@ int main()
             printf("numero: %d\nsuma de los anteriores: %d\n",x,sumNumImp);
 
         }
+    return 0;
 
 }
 
