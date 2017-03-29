@@ -17,8 +17,8 @@ int main()
     numLeg=pedirNumero("\n\nIngrese el numero de legajo: ");
     validacionNumeroLeg(numLeg);
     sueldo=pedirNumeroFloat("\nIngrese el sueldo neto: ");
-    validacionSueldo(sueldo,1500,10000);
-    printf("%f",sueldo);
+    sueldo=validacionSueldo(sueldo,1500,10000);
+    printf("%.2f",sueldo);
 
 
 
