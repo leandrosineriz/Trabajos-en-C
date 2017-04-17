@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1492436363 source:c:\users\alumno\desktop\dueños y perros\funciones.c
+	"funciones.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1492437347 c:\users\alumno\desktop\dueños y perros\funciones.h
+
+1492436671 source:c:\users\alumno\desktop\dueños y perros\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+

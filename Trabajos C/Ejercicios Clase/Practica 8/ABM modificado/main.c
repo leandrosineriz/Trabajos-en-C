@@ -9,18 +9,20 @@
  * \return
  *
  */
-typedef struct
+
+ void estadistica(int[]);
+/*typedef struct
 {
     int A=5;
     char nombres[5][15];
     int legajos[5];
     int estados[5]={0};
-}eAlumno;
+}eAlumno;*/
 
 
 int main()
 {
-    int i, j;
+   /* int i, j;
     int A = 5;
     char auxCadena[15];
     int auxInt;
@@ -28,6 +30,8 @@ int main()
     char seguir='s';
 
 eAlumno alumno;
+
+
 
     do
     {
@@ -61,11 +65,77 @@ eAlumno alumno;
         }
 
     }while(seguir=='s');
+    */
+
+    int edades[10]={10,18,22,35,45,89,22,33,45,55};
+
+    estadistica(edades);
 
 
 
 
 
     return 0;
+}
+
+
+
+
+void estadistica(int edades[])
+{
+    int i,j,max,flag=0;
+    int menor18=0,entre18_25=0,mayor25=0;
+
+
+
+    for(i=0;i<10;i++)
+    {
+        if(edades[i]<18)
+        {
+            menor18++;
+        }
+        else if(edades[i]>=18&&edades[i]<=25)
+        {
+            entre18_25++;
+        }
+        else
+        {
+            mayor25++;
+        }
+    }
+
+    int cantidades[3]={menor18,entre18_25,mayor25};
+
+    for(i=0;i<3;i++)
+    {
+        if(flag==0)
+        {
+            flag=1;
+            max=cantidades[i];
+        }
+        else if(edades[i]>max)
+        {
+            max=cantidades[i];
+        }
+
+    }
+
+    for(i=max;i>0;i--)
+    {
+        for(j=0;j<3;j++)
+        {
+            if(cantidades[j]>=i)
+            {
+                printf(" * ");
+
+            }
+            else
+            {
+                printf("   ");
+
+            }
+        }
+        printf("\n");
+    }
 }
 
