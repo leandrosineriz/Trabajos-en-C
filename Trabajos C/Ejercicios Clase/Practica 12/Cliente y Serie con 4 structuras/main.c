@@ -30,14 +30,13 @@ int main()
 
     cargarClientes(clientes);
     cargarSeries(series);
+    CargarSeriesClientes(serieCliente);
     mostrarListaCliente(clientes,10);
     mostrarListaSerie(series,TAM);
-    //mostrarClientesySeries(clientes,series,10,TAM);
-    mostrarSeriesconClientes(clientes,series,10,TAM);
-    mostrarClientesTBBT(clientes,series,10);
-    serieMenosPopular(clientes,series,contadores,10,TAM);
-    CargarSeriesClientes(serieCliente);
     mostrarClientesySeries(clientes,series,serieCliente,10,TAM,20);
+    mostrarSeriesconClientes(clientes,series,serieCliente,10,TAM,20);
+    mostrarClientesTBBT(clientes,series,serieCliente,10,TAM,20);
+    serieMenosPopular(clientes,series,serieCliente,contadores,10,TAM,20);
 
 
 

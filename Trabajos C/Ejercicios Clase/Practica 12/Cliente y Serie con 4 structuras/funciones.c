@@ -29,7 +29,6 @@ void cargarClientes(eCliente clientes[])
     int id[10] = {1,2,3,4,5,6,7,8,9,10};
     char nombres[10][30]= {"juan","maria","pedro","luis","romina","jose","andrea","patricia","luciano","camila"};
     int estado[10]= {1,1,1,1,1,1,1,1,1,1};
-    int idSerie[10]= {100,100,101,103,103,101,102,103,100,102};
     int i;
 
     for(i=0; i<10; i++)
@@ -37,7 +36,6 @@ void cargarClientes(eCliente clientes[])
         clientes[i].idCliente = id[i];
         strcpy(clientes[i].nombre, nombres[i]);
         clientes[i].estado = estado[i];
-        clientes[i].idSerie = idSerie[i];
     }
 
 }
@@ -112,7 +110,7 @@ void mostrarClientesySeries(eCliente clientes[],eSerie series[],eSeriesCliente s
 
 
 
-    printf("\n\nCLIENTES con su SERIE: ");
+    printf("\n\nCLIENTES con su SERIE: \n\n");
 
     for(i=0; i<tamClientes; i++)
     {
@@ -128,7 +126,7 @@ void mostrarClientesySeries(eCliente clientes[],eSerie series[],eSeriesCliente s
                         if(flag==0)
                         {
                             flag=1;
-                            printf("\n\t|%d\t|%s|\t%d|\n",clientes[i].idCliente,clientes[i].nombre,clientes[i].estado);
+                            printf("\n\n\n\t|%d\t|%s|\t%d|\n",clientes[i].idCliente,clientes[i].nombre,clientes[i].estado);
                         }
                         printf("\n\t|%d\t|%s|\t%s|\t%d\t%d\n",series[x].idSerie,series[x].titulo,series[x].genero,series[x].temporadas,series[x].estado);
 
@@ -146,9 +144,9 @@ void mostrarClientesySeries(eCliente clientes[],eSerie series[],eSeriesCliente s
 }
 
 
-void mostrarSeriesconClientes(eCliente clientes[],eSerie series[],int tamClientes,int tamSeries)
+void mostrarSeriesconClientes(eCliente clientes[],eSerie series[],eSeriesCliente serieCliente[],int tamClientes,int tamSeries,int tamSerClien)
 {
-    int i,j,flag;
+    int i,j,x,flag;
 
 
 
@@ -157,18 +155,26 @@ void mostrarSeriesconClientes(eCliente clientes[],eSerie series[],int tamCliente
     for(i=0; i<tamSeries; i++)
     {
         flag=0;
-        for(j=0; j<tamClientes; j++)
+        for(j=0; j<tamSerClien; j++)
         {
 
-            if(series[i].idSerie==clientes[j].idSerie)
+            if(series[i].idSerie==serieCliente[j].idSerie)
             {
-                if(flag==0)
+                for(x=0;x<tamClientes;x++)
                 {
-                    flag=1;
-                    printf("\n\n\n\t|%d\t|%s|\t%s|\t%d\t%d\n",series[i].idSerie,series[i].titulo,series[i].genero,series[i].temporadas,series[i].estado);
+                    if(serieCliente[j].idCliente==clientes[x].idCliente)
+                    {
+                        if(flag==0)
+                        {
+                            flag=1;
+                            printf("\n\n\n\t|%d\t|%s|\t%s|\t%d\t%d\n",series[i].idSerie,series[i].titulo,series[i].genero,series[i].temporadas,series[i].estado);
+                        }
+                        printf("\n\t|%d\t|%s|\t%d|",clientes[x].idCliente,clientes[x].nombre,clientes[x].estado);
+                    }
+
                 }
 
-                   printf("\n\t|%d\t|%s|\t%d|",clientes[j].idCliente,clientes[j].nombre,clientes[j].estado);
+
             }
         }
 
@@ -179,21 +185,29 @@ void mostrarSeriesconClientes(eCliente clientes[],eSerie series[],int tamCliente
 }
 
 
-void mostrarClientesTBBT(eCliente clientes[],eSerie series[],int tamClientes)
+void mostrarClientesTBBT(eCliente clientes[],eSerie series[],eSeriesCliente serieCliente[],int tamClientes,int tamSeries,int tamSerClien)
 {
-    int i,flag=0;
+    int i,j,flag=0;
 
 
 
     printf("\n\n\nCLIENTES QUE VEN TBBT: \n");
 
-    for(i=0; i<tamClientes; i++)
+    for(i=0; i<tamSerClien; i++)
     {
 
-        if(clientes[i].idSerie==series[0].idSerie)
+        if(serieCliente[i].idSerie==series[0].idSerie)
         {
-            flag=1;
-            printf("\n\t|%d\t|%s|\t%d|\n",clientes[i].idCliente,clientes[i].nombre,clientes[i].estado);
+            for(j=0; j<tamClientes; j++)
+            {
+                if(serieCliente[i].idCliente==clientes[j].idCliente)
+                {
+                    flag=1;
+                    printf("\n\t|%d\t|%s|\t%d|\n",clientes[j].idCliente,clientes[j].nombre,clientes[j].estado);
+                }
+
+            }
+
         }
     }
 
@@ -207,7 +221,7 @@ void mostrarClientesTBBT(eCliente clientes[],eSerie series[],int tamClientes)
 
 }
 
-void serieMenosPopular(eCliente clientes[],eSerie series[],eContador contador[],int tamClientes,int tamSeries)
+void serieMenosPopular(eCliente clientes[],eSerie series[],eSeriesCliente serieCliente[],eContador contador[],int tamClientes,int tamSeries,int tamSerClien)
 {
     int i,j,min,flagMin=0;
 
@@ -218,9 +232,9 @@ void serieMenosPopular(eCliente clientes[],eSerie series[],eContador contador[],
     {
         contador[i].idSerie=series[i].idSerie;
         contador[i].cont=0;
-        for(j=0;j<tamClientes;j++)
+        for(j=0;j<tamSerClien;j++)
         {
-            if(series[i].idSerie==clientes[j].idSerie)
+            if(series[i].idSerie==serieCliente[j].idSerie)
             {
                 contador[i].cont++;
             }
@@ -259,38 +273,3 @@ void serieMenosPopular(eCliente clientes[],eSerie series[],eContador contador[],
 
 }
 
-
-
-/*void mostrarClienteSerie(eCliente clientes[],eSerie series[],eSeriesCliente serieCliente[],int tamClientes,int tamSeries)
-{
-    int i,j,cont=0,flag=0;
-    char auxNombre[20];
-
-    printf("\n\nVER SERIES DEL CLIENTE.");
-    printf("\n\nIngrese el nombre del cliente: ");
-    fflush(stdin);
-    gets(auxNombre);
-    printf("%s",auxNombre);
-
-
-    for(i=0;i<tamClientes;i++)
-    {
-        for(j=0;j<tamSeries;j++)
-        {
-            if(clientes[i].idSerie==series[j].idSerie)
-            {
-
-
-
-            }
-        }
-    }
-
-
-
-
-
-
-
-
-}*/

@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1493123956 source:c:\users\alumno\desktop\repo\trabajos c\ejercicios clase\practica 11\cliente y serie\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+
+1493123676 c:\users\alumno\desktop\repo\trabajos c\ejercicios clase\practica 11\cliente y serie\funciones.h
+
+1493124028 source:c:\users\alumno\desktop\repo\trabajos c\ejercicios clase\practica 11\cliente y serie\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
+1493126179 source:c:\users\alumno\desktop\repo\trabajos c\ejercicios clase\practica 12\cliente y serie con 4 structuras\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+
+1493126143 c:\users\alumno\desktop\repo\trabajos c\ejercicios clase\practica 12\cliente y serie con 4 structuras\funciones.h
+
+1493126143 source:c:\users\alumno\desktop\repo\trabajos c\ejercicios clase\practica 12\cliente y serie con 4 structuras\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
