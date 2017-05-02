@@ -1,0 +1,52 @@
+int main()
+{
+    ePersona personas[TAM];
+    char seguir='s';
+    int opcion=0;
+
+
+    setLista(personas,TAM);
+
+    while(seguir=='s')
+    {
+        system("cls");
+        printf("\n");
+        printf("\n");
+        printf("\n");
+        printf("\n");
+        printf("\n");
+        printf("\n");
+        printf("\n");
+
+
+        scanf("%d",&opcion);
+
+
+
+        switch(opcion)
+        {
+        case 1:
+            
+            break;
+        case 2:
+            
+            break;
+        case 3:
+            
+            break;
+        case 4:
+            
+            break;
+        case 5:
+            seguir = 'n';
+            break;
+        default:
+            printf("La opcion ingresada es incorrecta.");
+        }
+        printf("\n\n");
+        system("pause");
+    }
+
+    printf("\n############ REGISTRO EN C by Leandro Si%ceriz ##############\n",164);
+    return 0;
+}
