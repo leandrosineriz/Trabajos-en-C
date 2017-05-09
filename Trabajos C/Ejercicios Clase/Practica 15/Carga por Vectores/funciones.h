@@ -1,0 +1,2 @@
+
+void ingresoDatos(int*,int);
