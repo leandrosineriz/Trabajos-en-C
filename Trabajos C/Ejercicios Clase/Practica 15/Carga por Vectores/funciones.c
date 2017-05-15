@@ -13,8 +13,25 @@ void ingresoDatos(int* pInt,int tam)
         scanf("%d",pInt+i);
     }
 
-    for(i=0;i<tam;i++)
+
+}
+
+void ordenarNum(int* pInt,int tam)
+{
+    int i,j;
+    int aux;
+
+    for(i=0;i<tam-1;i++)
     {
-        printf("\nel numero en la posicion %d es : %d",i,*(pInt+i));
+        for(j=i+1;j<tam;j++)
+        {
+            if(*(pInt+i)>*(pInt+j))
+            {
+                aux=*(pInt+i);
+                *(pInt+i)=*(pInt+j);
+                *(pInt+j)=aux;
+            }
+        }
+
     }
 }

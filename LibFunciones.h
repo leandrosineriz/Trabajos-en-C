@@ -22,13 +22,13 @@ void CargarSeriesClientes(eSeriesCliente clientes[]);
  * \return Numero ingresado
  *
  */
-int pedirInt(char texto[]);
+int pedirInt(char []);
 
-float pedirFloat(char texto[]);
+float pedirFloat(char []);
 
-char pedirChar(char texto[]);
+char pedirChar(char []);
 
-char pedirString(char texto[],char[]);
+char pedirString(char [],char[]);
 
 
 /**
@@ -46,7 +46,7 @@ int obtenerEspacioLibre(ePersona[],int);
  * @param el dni a ser buscado en el array.
  * @return el indice en donde se encuentra el elemento que coincide con el parametro dni
  */
-int buscarPorDni(ePersona[],int,int);
+int buscarPorInt(ePersona[],int,int);
 
 
 /** \brief inicializa el estado,dni y edad
@@ -92,7 +92,7 @@ int buscarEstadoActivoLista(ePersona[],int);
  *
  */
 
-void agregarPersona(ePersona[],int);
+void Alta(ePersona[],int);
 
 /** \brief elimina un usuario de la lista cambiando el estado
  *
@@ -101,16 +101,8 @@ void agregarPersona(ePersona[],int);
  *
  */
 
-void borrarPersona(ePersona[],int);
+void Baja(ePersona[],int);
 
-/** \brief muestra un grafico de edades
- *
- * \param array ePersona
- * \param tamaño del array
- *
- */
-
-void estadistica(ePersona[],int);
 
 //void cargarPersonas(ePersona[]);
 
@@ -132,4 +124,4 @@ char validarSoN(char);
  *
  */
 
-void validarDNI(ePersona lista[],int tam,int libre);
+void validarNumEntre(ePersona [],int,int,int,int);

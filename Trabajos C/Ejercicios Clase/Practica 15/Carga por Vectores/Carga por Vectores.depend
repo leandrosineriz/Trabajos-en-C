@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1494342017 source:c:\users\alumno\desktop\repo\trabajos c\ejercicios clase\practica 15\carga por vectores\funciones.c
+1494856016 source:c:\users\alumno\desktop\repo\trabajos c\ejercicios clase\practica 15\carga por vectores\funciones.c
 	"funciones.h"
 	<stdio.h>
 	<stdlib.h>
 
-1494342017 c:\users\alumno\desktop\repo\trabajos c\ejercicios clase\practica 15\carga por vectores\funciones.h
+1494855514 c:\users\alumno\desktop\repo\trabajos c\ejercicios clase\practica 15\carga por vectores\funciones.h
 
-1494341765 source:c:\users\alumno\desktop\repo\trabajos c\ejercicios clase\practica 15\carga por vectores\main.c
+1494855646 source:c:\users\alumno\desktop\repo\trabajos c\ejercicios clase\practica 15\carga por vectores\main.c
 	<stdio.h>
 	<stdlib.h>
 	"funciones.h"
