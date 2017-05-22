@@ -1,0 +1,46 @@
+# depslib dependency file v1.0
+1493736995 source:c:\users\alumno\desktop\siñerizleandro\parcial 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+
+1493736891 source:c:\users\alumno\desktop\siñerizleandro\parcial 1\funciones.c
+	"funciones.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+
+1493736548 c:\users\alumno\desktop\siñerizleandro\parcial 1\funciones.h
+
+1495400215 source:c:\users\leo\desktop\siñerizleandro\parcial 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+
+1495391014 c:\users\leo\desktop\siñerizleandro\parcial 1\funciones.h
+
+1495403258 source:c:\users\leo\desktop\siñerizleandro\parcial 1\funciones.c
+	"funciones.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+
+1495417666 source:c:\users\leo\desktop\siñerizleandro - copia\parcial 1\funciones.c
+	"funciones.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+
+1495417491 c:\users\leo\desktop\siñerizleandro - copia\parcial 1\funciones.h
+
+1495416418 source:c:\users\leo\desktop\siñerizleandro - copia\parcial 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+
