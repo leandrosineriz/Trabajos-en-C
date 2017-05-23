@@ -4,6 +4,11 @@
 #include <string.h>
 #include <ctype.h>
 #include <conio.h>
+#define AUDI 101
+#define FIAT 102
+#define FORD 103
+#define PEUGEOT 104
+#define TOYOTA 105
 
 void setEstados(eAutomovil autos[],eProfesor profesor[],ePlaya playa[],int tamAuto,int tamProfe,int tamPLaya)
 {
@@ -69,6 +74,7 @@ void cargarPlaya(ePlaya playa[])
     char patente[20][30]= {"AAA","BBB","CCC","DDD","EEE","FFF","GGG","HHH","III","JJJ","KKK","LLL","MMM","NNN","OOO","PPP","QQQ","RRR","SSS","UUU"};
     int idProfesor[20]= {1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10};
     int estado[20]= {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
+    int hora[20]= {13,14,12,05,16,18,19,20,6,3,4,19,10,9,17,14,18,9,10,12};
 
 
 
@@ -78,6 +84,7 @@ void cargarPlaya(ePlaya playa[])
         strcpy(playa[i].patente,patente[i]);
         playa[i].idProfesor=idProfesor[i];
         playa[i].estado = estado[i];
+        playa[i].hora=hora[i];
     }
 
 }
@@ -292,7 +299,7 @@ void ordenarFilaEspera(ePlaya playa[],int tamPlaya)
 
 void ingreso(eAutomovil autos[],ePlaya playa[],int tamAuto,int tamPlaya)
 {
-    int i,j,libre;
+    int i,j,libre,hora;
     char auxPatente[50],flagEncontro=0;
 
 
@@ -334,6 +341,8 @@ void ingreso(eAutomovil autos[],ePlaya playa[],int tamAuto,int tamPlaya)
         return;
     }
 
+
+
     if(libre<20)
     {
         for(i=20;i<tamPlaya;i++)
@@ -343,6 +352,18 @@ void ingreso(eAutomovil autos[],ePlaya playa[],int tamAuto,int tamPlaya)
                 playa[i].estado=0;
             }
         }
+
+        printf("\nIngrese el hora de ingreso:(int entre 0 y 24) ");
+        scanf("%d",&hora);
+
+        while(hora<0 || hora>24)
+        {
+            printf("\nLa hora ingresada es invalida. Reingrese: ");
+            scanf("%d",&hora);
+        }
+
+        playa[libre].hora=hora;
+
         printf("\n El auto a ingresado correctamente");
     }
     else
@@ -351,11 +372,13 @@ void ingreso(eAutomovil autos[],ePlaya playa[],int tamAuto,int tamPlaya)
     }
 
 
+
+
 }
 
 void egreso(ePlaya playa[],int tamPlaya)
 {
-    int i,flag=0;
+    int i,flag=0,auxHora,diferenciaHora,plata=0;
     char auxPatente[50];
 
     printf("\nIngrese la patente del Automovil que desea Egresar: ");
@@ -368,7 +391,45 @@ void egreso(ePlaya playa[],int tamPlaya)
     {
         if(strcmp(auxPatente,playa[i].patente)==0 && playa[i].estado==1)
         {
+            printf("El auto ingreso a las: %d\nIngrese la hora de egreso:(int entre 0 y 24) ",playa[i].hora);
+            scanf("%d",&auxHora);
+
+            while(auxHora<0 || auxHora>24)
+            {
+            printf("\nLa hora ingresada es invalida. Reingrese un int entre 0 y 24: ");
+            scanf("%d",&auxHora);
+            }
+            while(playa[i].hora>auxHora)
+            {
+                printf("La hora de egreso no puede ser menor a la hora de ingreso(%d).Reingrese:  ",playa[i].hora);
+                scanf("%d",&auxHora);
+                while(auxHora<0 || auxHora>24)
+                {
+                printf("\nLa hora ingresada es invalida. Reingrese un int entre 0 y 24: ");
+                scanf("%d",&auxHora);
+                }
+
+            }
+
+            diferenciaHora=auxHora-playa[i].hora;
+
+            if(diferenciaHora>4)
+            {
+                diferenciaHora=diferenciaHora-4;
+                plata=diferenciaHora*10;
+            }
+
+            if(plata==0)
+            {
+                printf("El auto estubo menos de 4 horas el profesor no debe pagar nada");
+            }
+            else
+            {
+                printf("El auto estubo %d horas extras debe pagar %d pesos",diferenciaHora,plata);
+            }
+
             playa[i].estado=0;
+
             printf("\nEl auto a egresado correctamente");
             flag=1;
 
@@ -458,7 +519,7 @@ void informes(eAutomovil autos[],ePlaya playa[],int tamAuto,int tamPlaya)
             {
 
 
-                if(strcmp(playa[i].patente,autos[j].patente)==0 && autos[j].estado==1 && autos[j].marca==102)
+                if(strcmp(playa[i].patente,autos[j].patente)==0 && autos[j].estado==1 && autos[j].marca==FIAT)
                 {
                     cont++;
 

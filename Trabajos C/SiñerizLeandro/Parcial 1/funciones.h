@@ -8,6 +8,7 @@ typedef struct{
    int idProfesor;
    int estado;
 
+
 }eAutomovil;
 
 typedef struct{
@@ -23,6 +24,7 @@ typedef struct
     int idProfesor;
     char patente[50];
     int estado;
+    int hora;
 
 }ePlaya;
 

@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1495552296 source:c:\users\alumno\desktop\repo\trabajos c\ejercicios clase\practica 18\ejerciciopuntero\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	"funciones.h"
+
+1495552264 c:\users\alumno\desktop\repo\trabajos c\ejercicios clase\practica 18\ejerciciopuntero\funciones.h
+
+1495550991 source:c:\users\alumno\desktop\repo\trabajos c\ejercicios clase\practica 18\ejerciciopuntero\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+	<conio.h>
+
