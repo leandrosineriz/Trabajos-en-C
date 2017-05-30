@@ -68,3 +68,29 @@
 	"ArrayList.h"
 	"Employee.h"
 
+1496156410 source:c:\users\alumno\desktop\repo\trabajos c\practica_pair_v1.2\windows_64\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"Employee.h"
+	"parser.h"
+
+1496153850 c:\users\alumno\desktop\repo\trabajos c\practica_pair_v1.2\windows_64\arraylist.h
+
+1496154594 c:\users\alumno\desktop\repo\trabajos c\practica_pair_v1.2\windows_64\employee.h
+
+1496157224 source:c:\users\alumno\desktop\repo\trabajos c\practica_pair_v1.2\windows_64\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"Employee.h"
+
+1496157729 source:c:\users\alumno\desktop\repo\trabajos c\practica_pair_v1.2\windows_64\employee.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"Employee.h"
+	<string.h>
+
+1496156084 c:\users\alumno\desktop\repo\trabajos c\practica_pair_v1.2\windows_64\parser.h
+

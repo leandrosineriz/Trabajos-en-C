@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "ArrayList.h"
 #include "Employee.h"
+#include "parser.h"
 
 /****************************************************
     Menu:
@@ -18,6 +19,8 @@ int main()
 {
     FILE* data;
     ArrayList* pArrayListEmployee;
+    Employee* newEmployee;
+    int tam,i;
 
 
 
@@ -28,6 +31,24 @@ int main()
         printf("NULL");
         exit(1);
     }
+
+    pArrayListEmployee=al_newArrayList();
+
+
+    parserEmployee(data,pArrayListEmployee);
+
+    tam=pArrayListEmployee->len(pArrayListEmployee);
+
+    newEmployee=employee_new();
+
+    for(i=0;i<tam;i++)
+    {
+
+        newEmployee=pArrayListEmployee->get(pArrayListEmployee,i);
+        employee_print(newEmployee);
+    }
+
+    pArrayListEmployee
 
 
 

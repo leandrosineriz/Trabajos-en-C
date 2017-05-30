@@ -36,5 +36,5 @@ int employee_setId(Employee* this, int id);
 int employee_getId(Employee* this);
 #endif // _EMPLOYEE_H
 
-
+Employee* employee_param(char*,char*,char*,char*);
 
