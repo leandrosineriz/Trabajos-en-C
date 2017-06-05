@@ -7,12 +7,12 @@
 
 int employee_compare(void* pEmployeeA,void* pEmployeeB)
 {
-    char empleadoA[500],empleadoB[500];
-    strcpy(empleadoA,pEmployeeA);
-    strcpy(empleadoB,pEmployeeB);
+    int comp;
+    pEmployeeA=(Employee*)pEmployeeA;
+    pEmployeeB=(Employee*)pEmployeeB;
 
-
-    return strcmp(empleadoA,empleadoB);
+    comp=strcmp(employee_getName(pEmployeeA),employee_getName(pEmployeeB));
+    return comp;
 }
 
 
@@ -71,8 +71,12 @@ int employee_setId(Employee* this, int id)
 int employee_getId(Employee* this)
 {
 
-    return 0;
+    return this->id;
 
 }
 
+char* employee_getName(Employee* this)
+{
+    return this->name;
+}
 

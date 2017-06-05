@@ -38,3 +38,4 @@ int employee_getId(Employee* this);
 
 Employee* employee_param(char*,char*,char*,char*);
 
+char* employee_getName(Employee* this);

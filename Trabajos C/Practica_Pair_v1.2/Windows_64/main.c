@@ -19,8 +19,9 @@ int main()
 {
     FILE* data;
     ArrayList* pArrayListEmployee;
+    ArrayList* subArrayListEmp;
     Employee* newEmployee;
-    int tam,i;
+    int tam,i,j,retorno;
 
 
 
@@ -41,15 +42,89 @@ int main()
 
     newEmployee=employee_new();
 
+    /*for(i=0;i<tam;i++)
+    {
+        if(i%250==0)
+        {
+            system("pause");
+        }
+
+        newEmployee=pArrayListEmployee->get(pArrayListEmployee,i);
+        employee_print(newEmployee);
+    }
+*/
+
+    /*retorno=pArrayListEmployee->sort(pArrayListEmployee,employee_compare,1);
+    if(retorno==-1)
+    {
+       printf("nada");
+    }*/
+
+
+    /*for(i=0;i<tam;i++)
+    {
+        if(i%250==0)
+        {
+            system("pause");
+        }
+
+        newEmployee=pArrayListEmployee->get(pArrayListEmployee,i);
+        employee_print(newEmployee);
+    }
+*/
+
+    /*newEmployee=employee_new();
+
+    newEmployee=employee_param("1001","Zeta","Zones","0");
+
+    pArrayListEmployee->add(pArrayListEmployee,newEmployee);
+
+    tam=pArrayListEmployee->len(pArrayListEmployee);
+
     for(i=0;i<tam;i++)
     {
+        if(i%250==0)
+        {
+            system("pause");
+        }
 
         newEmployee=pArrayListEmployee->get(pArrayListEmployee,i);
         employee_print(newEmployee);
     }
 
-    pArrayListEmployee
+    system("pause");
 
+    newEmployee=pArrayListEmployee->pop(pArrayListEmployee,1000);
+
+    employee_print(newEmployee);
+
+    tam=pArrayListEmployee->len(pArrayListEmployee);
+
+    for(i=0;i<tam;i++)
+    {
+        if(i%250==0)
+        {
+            system("pause");
+        }
+
+        newEmployee=pArrayListEmployee->get(pArrayListEmployee,i);
+        employee_print(newEmployee);
+    }*/
+
+    subArrayListEmp=pArrayListEmployee->subList(pArrayListEmployee,0,200);
+
+    tam=subArrayListEmp->len(subArrayListEmp);
+
+    for(i=0;i<tam;i++)
+    {
+        if(i%250==0)
+        {
+            system("pause");
+        }
+
+        newEmployee=subArrayListEmp->get(subArrayListEmp,i);
+        employee_print(newEmployee);
+    }
 
 
     return 0;

@@ -94,3 +94,29 @@
 
 1496156084 c:\users\alumno\desktop\repo\trabajos c\practica_pair_v1.2\windows_64\parser.h
 
+1496616404 source:c:\users\leo\desktop\proyectos\trabajos-en-c\trabajos c\practica_pair_v1.2\windows_64\employee.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"Employee.h"
+	<string.h>
+
+1496139337 c:\users\leo\desktop\proyectos\trabajos-en-c\trabajos c\practica_pair_v1.2\windows_64\arraylist.h
+
+1496611407 c:\users\leo\desktop\proyectos\trabajos-en-c\trabajos c\practica_pair_v1.2\windows_64\employee.h
+
+1496617527 source:c:\users\leo\desktop\proyectos\trabajos-en-c\trabajos c\practica_pair_v1.2\windows_64\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"Employee.h"
+	"parser.h"
+
+1496139337 c:\users\leo\desktop\proyectos\trabajos-en-c\trabajos c\practica_pair_v1.2\windows_64\parser.h
+
+1496139337 source:c:\users\leo\desktop\proyectos\trabajos-en-c\trabajos c\practica_pair_v1.2\windows_64\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"Employee.h"
+
